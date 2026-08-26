@@ -1,5 +1,3 @@
-from sys import maxsize
-
 numbers = [12, 5, 8, 21, 3, 17]
 print(numbers)
 numbersSum = 0
