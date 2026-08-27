@@ -1,0 +1,7 @@
+numbers = (1, 2, 3, 4, 5)
+print(f"tuple numbers: {numbers}")
+numbersList = list(numbers)
+numbersList.append(6)
+print(f"list numbers: {numbersList}")
+numbers = tuple(numbersList)
+print(f"tuple numbers: {numbers}")
