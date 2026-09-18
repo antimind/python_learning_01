@@ -1,22 +1,19 @@
-import os
 import pathlib
 
-dir_path = os.path.join("reports", "2026", "september")
-path = pathlib.Path(dir_path)
+dir_path = pathlib.Path("reports", "2026", "september")
 
 try:
-    path.mkdir(parents=True, exist_ok=False)
-    print(f"Directory '{path}' created\n")
+    dir_path.mkdir(parents=True, exist_ok=False)
+    print(f"Directory '{dir_path}' created\n")
 except FileExistsError:
-    print(f"Directory '{path}' already exists\n")
+    print(f"Directory '{dir_path}' already exists\n")
 
-file_path = pathlib.Path(dir_path, "report.txt")
-path = pathlib.Path(file_path)
-path.write_text("Report created")
+file_path = dir_path.joinpath("report.txt")
+file_path.write_text("Report created")
 
-print(f"- File name: {path.name}\n- Parent directory: {path.parent}\n"
-      f"- Is exists: {path.exists()}\n- Is file: {path.is_file()}"
-      f"- Absolute path: {path.absolute()}")
+print(f"- File name: {file_path.name}\n- Parent directory: {file_path.parent}\n"
+      f"- Is exists: {file_path.exists()}\n- Is file: {file_path.is_file()}"
+      f"- Absolute path: {file_path.absolute()}")
 
 
 
