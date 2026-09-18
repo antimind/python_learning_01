@@ -3,14 +3,14 @@ import json
 FILE_NAME = "settings.json"
 
 def write_settings(settings_data):
-    with open(FILE_NAME, "w") as file:
-        json.dump(settings_data, file, indent=4)
+    with open(FILE_NAME, "w") as _file:
+        json.dump(settings_data, _file, indent=4)
 
 def read_settings() -> dict[str, object]:
     try:
-        with open(FILE_NAME, "r") as file:
+        with open(FILE_NAME, "r") as _file:
             try:
-                return json.load(file)
+                return json.load(_file)
             except json.decoder.JSONDecodeError:
                 print(f"File {FILE_NAME} is not JSON")
                 exit(0)
